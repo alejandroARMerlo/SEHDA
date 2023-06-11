@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+                 xmlns:th="http://www.thymeleaf.org"
+                 xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet"  th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+    <script th:src="@{/webjars/jquery/jquery.min.js}" ></script>
+    <script th:src="@{/webjars/popper.js/umd/popper.min.js}" ></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" ></script>
+
+    <title></title>
+</head>
+<body>
+
+ <h1>Medico logueado</h1>
+
+ <form th:action="@{/assignPatient}" method="post" >
+ <select th:field="*{patient.id}">
+     <option th:each="patient: ${patientsList}"    th:value="${patient.id}" th:text="${patient.user.surname } + ' ' + ${patient.user.name }" />
+ </select>
+
+     <input class="" type="submit" value="Asignar Paciente">
+
+
+ </form>
+
+</body>
+</html>

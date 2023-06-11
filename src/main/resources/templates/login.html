@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html   xmlns="http://www.w3.org/1999/xhtml"
+        lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href=".\static\css\index.css">
+    <title>Home</title>
+</head>
+<body>
+<!-- Inicio del menu -->
+<header>
+    <div class="ancho">
+        <div class="logo">
+            <a href="/"><img src=".\static\images\SEHDA2.png"></a>
+        </div>
+    </div>
+</header>
+<!-- Fin del Menu -->
+
+<section class="registro">
+    <h4>Ingresar</h4>
+    <br>
+    <form th:action="@{/login}" method="POST">
+        <input class="control" id="username" type="text" name="username" placeholder="Ingrese su usuario">
+        <input class="control" id="password" type="password" name="password" placeholder="Ingrese su clave">
+        <input class="botons" type="submit" value="Ingresar">
+    </form>
+    <p>¿No tienes cuenta? <!--<a href="registro.html">Registrate</a>--></p>
+    <!-- Traemos un dato brindado: <p>${usuario}</p>-->
+    <a href="/registrom"><button class="botons">Registrarse como medico</button></a>
+    <a href="/registrop"><button class="botons">Registrarse como paciente</button></a>
+
+</section>
+</body>
+</html>

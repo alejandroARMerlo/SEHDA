@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="css\x.css">
+    <title>Registro</title>
+</head>
+<body>
+
+<form th:action="@{/singUpPatient}" method="post" th:object="${patient}">
+    <input class=""  type="text" name="name" th:field="*{user.name}" placeholder="Ingrese su nombre">
+    <br>
+    <input class=""  type="text" name="surname" th:field="*{user.surname}" placeholder="Ingrese su apellido">
+    <br>
+    <input class=""  type="number" name="dni" th:field="*{user.dni}" placeholder="Ingrese su numero de dni">
+    <br>
+    <input class=""  type="number" name="phone" th:field="*{user.phone}" placeholder="Ingrese su telefono">
+    <br>
+    <input class=""  type="text" name="mail" th:field="*{user.email}" placeholder="Ingrese su correo">
+    <br>
+    <input class=""  type="text" name="username" th:field="*{user.username}" placeholder="Ingrese su usuario">
+    <br>
+    <input class="" type="password" name="password" th:field="*{user.password}" placeholder="Ingrese su clave">
+    <br>
+    <input class="" type="submit" value="Registrarse">
+</form>
+<a href="index"><input class="" type="submit" value="Regresar"></a>
+</body>
+</html>
